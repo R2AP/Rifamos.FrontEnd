@@ -1,3 +1,7 @@
   .icon-display {
     transform: scale(2);
  }
+
+ header {
+  display: block;
+ }

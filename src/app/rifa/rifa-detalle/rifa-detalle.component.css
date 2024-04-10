@@ -1,0 +1,12 @@
+.containerFlex c{
+    display: flex;
+    flex-direction: column;
+   }
+
+.celeste{
+    background: lightblue;
+}
+
+.rosa{
+    background: pink;
+}
