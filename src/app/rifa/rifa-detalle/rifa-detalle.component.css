@@ -1,12 +1,28 @@
-.containerFlex c{
+.container-section{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
    }
 
 .celeste{
     background: lightblue;
+    max-width: 20%;
 }
 
 .rosa{
     background: pink;
+    max-width: 20%;
+}
+
+@media screen and (max-width: 700px){
+    .container-section{
+        flex-direction: column;
+        justify-content: space-around;
+       }
+    .celeste{
+        max-width: 100%;
+    }
+    .rosa{
+        max-width: 100%;
+    }
 }
