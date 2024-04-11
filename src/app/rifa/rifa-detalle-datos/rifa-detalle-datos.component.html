@@ -1,7 +1,18 @@
-<h1>Nombre de la rifa</h1>
-<br>
-<h2>Premios</h2>
+<h1>{{rifa.rifaDescripcion}}</h1>
+
+<h3>Fecha: {{rifa.fechaSorteo | date: 'longDate'}}</h3>
+<h3>Hora: {{rifa.horaSorteo}}</h3>
+
 <ul>
-    <li>Premio 1</li>
-    <li>Premio 2</li>
+@for (premio of premios; track premio.premioId) {
+    <li>{{premio.premioDescripcion}}</li>
+}
 </ul>
+<span>Precio: S/</span>
+@for (precio of precios; track precio.precioId) {
+    <span>{{precio.precioUnitario}}</span><br>
+}
+
+<br>
+
+<span>{{rifa.sponsor}}</span>

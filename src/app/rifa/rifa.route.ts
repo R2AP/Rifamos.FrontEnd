@@ -5,7 +5,7 @@ import { CompraRealizadaComponent } from './compra-realizada/compra-realizada.co
 
 
 export const RIFA_ROUTES: Routes = [
-    { path: '', component: RifaDetalleComponent },
+    { path: 'rifa/:rifaId', component: RifaDetalleComponent },
     { path: 'pago', component: PasarelaPagoComponent},
     { path: 'compra-realizada', component: CompraRealizadaComponent}
 ];
