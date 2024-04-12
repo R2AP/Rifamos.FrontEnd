@@ -13,6 +13,7 @@ export class RifaService {
 
   obtenerRifaDetalle(rifaId : number): Observable<any> {
     return this._http.get(apiURL + '/rifa/obtener-rifa/' + rifaId);
+    console.log ( 'Rifa ' + rifaId ) ;
   }
 
   obtenerPremios(rifaId : number): Observable<any> {

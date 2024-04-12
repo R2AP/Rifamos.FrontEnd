@@ -21,6 +21,7 @@ export class RifaDetalleDatosComponent implements OnInit {
 
   ngOnInit(): void {
     this.rifaId = this.rifaIdInput;
+    console.log ('ngOnInit this.rifaId rifa-detalle-datos: ' + this.rifaIdInput);
     this.obtenerRifaDetalle(this.rifaId);
     this.obtenerPremios(this.rifaId);
     this.obtenerPrecios(this.rifaId);
@@ -32,6 +33,8 @@ export class RifaDetalleDatosComponent implements OnInit {
       next:(res: any) => {
         
         this.rifa = res;
+        //console.log ( res );
+
       },
       error:(error) => console.log('Error consultando la rifa', error)
     })
