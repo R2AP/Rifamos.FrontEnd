@@ -1,9 +1,25 @@
-<section class="container-section">
-    <div class="celeste">
-        <app-rifa-detalle-imagen [rifaIdInput] ="rifaId"></app-rifa-detalle-imagen>
+<section class="contenedor-total">
+    <div class="container-section">
+        <div class="imagen-dato">
+            <app-rifa-detalle-imagen [rifaIdInput] ="rifaId"></app-rifa-detalle-imagen>
+        </div>
+        
+        <div class="imagen-dato">
+            <app-rifa-detalle-datos [rifaIdInput] ="rifaId"></app-rifa-detalle-datos>
+        </div>
     </div>
-    
-    <div class="rosa">
-        <app-rifa-detalle-datos [rifaIdInput] ="rifaId"></app-rifa-detalle-datos>
+    <mat-divider></mat-divider>
+    <p>
+    <div class="contenedor-pago">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Comprar</mat-label>
+                <input type="number" matInput placeholder="Cantidad de opciones" min = "1" max = "20" value = "1">
+            </mat-form-field>
+            
+            <br>
+
+            <button mat-flat-button color="accent">Pagar</button>
+        </form>
     </div>
 </section>

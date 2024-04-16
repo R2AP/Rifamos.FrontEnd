@@ -5,7 +5,7 @@
 
 <ul>
 @for (premio of premios; track premio.premioId) {
-    <li>{{premio.premioDescripcion}}</li>
+    <li>Premio N° {{$index + 1}}: {{premio.premioDescripcion}}</li>
 }
 </ul>
 <span>Precio: S/</span>

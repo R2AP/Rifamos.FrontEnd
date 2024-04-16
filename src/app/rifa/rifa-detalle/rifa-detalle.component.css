@@ -1,28 +1,38 @@
+.contenedor-total{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
 .container-section{
     display: flex;
     flex-direction: row;
     justify-content: center;
    }
 
-.celeste{
-    background: lightblue;
-    max-width: 20%;
+.imagen-dato{
+    width: 100%;
 }
 
-.rosa{
-    background: pink;
-    max-width: 20%;
+.contenedor-pago{
+    text-align: center;
 }
 
 @media screen and (max-width: 700px){
+    .contenedor-total{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
     .container-section{
         flex-direction: column;
         justify-content: space-around;
        }
-    .celeste{
+    .imagen-dato{
         max-width: 100%;
-    }
-    .rosa{
-        max-width: 100%;
+        text-align: center;
     }
 }
