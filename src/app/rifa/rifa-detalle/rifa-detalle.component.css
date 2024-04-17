@@ -23,8 +23,8 @@
 
 @media screen and (max-width: 700px){
     .contenedor-total{
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .container-section{
@@ -33,6 +33,10 @@
        }
     .imagen-dato{
         max-width: 100%;
-        text-align: center;
+        /* text-align: center; */
+    }
+
+    .boton-pagar{
+        width: 100%;
     }
 }
