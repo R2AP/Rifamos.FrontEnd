@@ -19,8 +19,8 @@
               
                 <mat-form-field class="example-full-width">
                   <mat-label>Contraseña</mat-label>
-                  <input type="password" matInput placeholder="Mínimo 8 digitos" />
-                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Mínimo 8 digitos" />
+                  <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </button>
                 </mat-form-field>
