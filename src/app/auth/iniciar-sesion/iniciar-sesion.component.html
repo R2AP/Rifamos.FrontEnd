@@ -1,33 +1,32 @@
  <div class="main-container">
     <mat-card class="tarjeta">
         <mat-card-header>
-            <mat-card-title>Rifamos.com</mat-card-title>
+            <mat-card-title>RifamosTodo.com</mat-card-title>
             <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
         </mat-card-header>
         <br><br>
         <mat-card-content>
-            <form class="formulario">
+            <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
                 <mat-form-field class="full-width">
                   <mat-label>Usuario</mat-label>
-                  <input matInput placeholder="usuario@rifamos.com">
+                  <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
                 </mat-form-field>
               
                 <mat-form-field class="full-width">
                   <mat-label>Contraseña</mat-label>
-                  <input type="password" matInput placeholder="Mínimo 8 digitos" />
+                  <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
                   
                 </mat-form-field>
 
-                <a href="#">Olvidé mi contraseña</a>
-                
-              </form>              
+                <p>
+                  <a href="#">Olvidé mi contraseña</a>
+                </p>
+                <button mat-flat-button class="botones" color="accent" type="submit">Continuar</button>
+            </form>              
         </mat-card-content>
         
         <mat-card-actions class="acciones">
-            <button mat-flat-button class="botones" color="accent">Continuar</button>
-            <p>
-              o
-            </p>  
+            o
             <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
         </mat-card-actions>
     </mat-card>
