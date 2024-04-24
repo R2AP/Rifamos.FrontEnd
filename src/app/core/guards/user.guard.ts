@@ -9,7 +9,7 @@ export const userGuard: CanActivateFn = (route, state) => {
   if (tokenSaved.length > 0){
     return true;  
   } else {
-    const redirect = router.createUrlTree(['/sesion']);
+    const redirect = router.createUrlTree(['/iniciar-sesion']);
     return redirect
   }
 };

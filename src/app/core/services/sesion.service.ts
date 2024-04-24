@@ -15,4 +15,8 @@ export class SesionService {
   iniciarSesion(usuario : Usuario): Observable<any> {
     return this._http.post(apiURL + '/login/loguearse', usuario);
   }
+
+  obtenerLlave(ruta:string): Observable<string> {
+    return this._http.get(ruta, {responseType: 'text'});
+  }
 }

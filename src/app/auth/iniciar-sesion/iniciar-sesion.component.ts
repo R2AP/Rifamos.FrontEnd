@@ -9,6 +9,7 @@ import { SesionService } from '../../core/services/sesion.service';
 import { Usuario } from '../../core/models/usuario.model';
 import { CookieService } from 'ngx-cookie-service'
 import { Router } from '@angular/router';
+import * as forge from 'node-forge';
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -32,20 +33,44 @@ export class IniciarSesionComponent {
 
   onSubmit(){
     const usuario:Usuario = new Usuario(this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
-                                this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '');
+                                  this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '');
 
-    this.sesionSvc.iniciarSesion(usuario).subscribe({
-      next:(res: any) => {
-        
-        if (res.token){
-          this.cookieSvc.set('token', res.token);
-          this.router.navigate(['/pago']);
-        }
-        
+      this.sesionSvc.iniciarSesion(usuario).subscribe({
+        next:(res: any) => {
+          
+          if (res.token){
+            this.cookieSvc.set('token', res.token);
+            this.router.navigate(['/pago']);
+          }
+  
+        },
+        error:(error) => console.log('Error consultando la rifa', error)
+      })
+    /*let llave = this.obtenerLlave();
+    let rsa;
+    llave.subscribe((data: string)=> {
+      console.log(data);
+      rsa = forge.pki.publicKeyFromPem(data);
+      var encryptedPassword = window.btoa(rsa.encrypt(this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: ''));
+console.log(encryptedPassword);
+      const usuario:Usuario = new Usuario(this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '', encryptedPassword);
 
-      },
-      error:(error) => console.log('Error consultando la rifa', error)
-    })
+      this.sesionSvc.iniciarSesion(usuario).subscribe({
+        next:(res: any) => {
+          
+          if (res.token){
+            this.cookieSvc.set('token', res.token);
+            this.router.navigate(['/pago']);
+          }
+  
+        },
+        error:(error) => console.log('Error consultando la rifa', error)
+      })
+    }) */
 
+  }
+
+  obtenerLlave(){
+    return this.sesionSvc.obtenerLlave("/core/keys/rifamostodopbl.pem");
   }
 }
