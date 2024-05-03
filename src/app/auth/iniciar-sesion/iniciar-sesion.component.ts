@@ -37,10 +37,12 @@ export class IniciarSesionComponent {
 
       this.sesionSvc.iniciarSesion(usuario).subscribe({
         next:(res: any) => {
-          
+
           if (res.token){
             this.cookieSvc.set('token', res.token);
             this.router.navigate(['/pago']);
+            sessionStorage.setItem('usuario',res.nombres);
+            sessionStorage.setItem('email',res.email);
           }
   
         },

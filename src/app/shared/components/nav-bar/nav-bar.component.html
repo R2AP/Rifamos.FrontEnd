@@ -4,7 +4,28 @@
     </button>
     <span>RifamosTodo.online</span>
     <span class="spacer"></span>
-    <button mat-icon-button class="icon-display" aria-label="Botón para indicar la seisión del usuario">
-      <mat-icon>account_circle</mat-icon>
-    </button>
+    
+    @if (sesionIniciada) {
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-display" aria-label="Botón para indicar la seisión del usuario">
+        <mat-icon>account_circle</mat-icon>usuario
+      </button> -->
+
+      <button mat-fab extended [matMenuTriggerFor]="menu" color="primary">
+        <mat-icon>account_circle</mat-icon>
+        Usuario
+      </button>
+      
+      <mat-menu #menu="matMenu" >
+      <!-- <button mat-menu-item>usuario</button> -->
+      <button mat-menu-item (click)="cerrarSesion()">Cerrar sesión</button>
+    </mat-menu>
+    }
+    @else {
+      <button mat-icon-button [disabled]="true" class="icon-display" aria-label="Botón para indicar la seisión del usuario">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+    }
+    
+
   </mat-toolbar>

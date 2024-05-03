@@ -14,7 +14,8 @@ export class RifaDetalleDatosComponent implements OnInit {
   private readonly rifaSvc = inject(RifaService)
   rifa: any = [];
   premios = new Array<any>();
-  precios = new Array<any>();
+  // precios = new Array<any>();
+  precio: any = [];
 
   rifaId: number = 0;
   // rifa$ = this.rifaSvc.obtenerRifaDetalle();
@@ -54,7 +55,7 @@ export class RifaDetalleDatosComponent implements OnInit {
   {
     this.rifaSvc.obtenerPrecios(rifaId).subscribe({
       next:(res:any) => {
-        this.precios = res;
+        this.precio = res;
       },
       error:(error) => console.log('Error consultando los precios', error)
     })
