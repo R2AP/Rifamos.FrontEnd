@@ -33,7 +33,7 @@ export class IniciarSesionComponent {
 
   onSubmit(){
     const usuario:Usuario = new Usuario(this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
-                                  this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '');
+                                  this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '', "00.00.00.00");
 
       this.sesionSvc.iniciarSesion(usuario).subscribe({
         next:(res: any) => {

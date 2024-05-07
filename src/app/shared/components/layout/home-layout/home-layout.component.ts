@@ -9,8 +9,7 @@ import { NavBarComponent } from "../../nav-bar/nav-bar.component";
   <header>
   <app-nav-bar></app-nav-bar>
 </header>
-<router-outlet />
-    `,
+  <router-outlet />`,
     styles: [],
     imports: [NavBarComponent,RouterOutlet]
 })

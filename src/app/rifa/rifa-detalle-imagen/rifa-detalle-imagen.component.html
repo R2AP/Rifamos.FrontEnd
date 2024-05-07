@@ -1,1 +1,7 @@
-<img [src]="transform()">
+@defer {
+    <img [src]="transform()">
+}
+@loading {
+    <img class="placeholder">
+}
+
