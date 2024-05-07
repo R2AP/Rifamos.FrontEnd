@@ -1,16 +1,33 @@
-<h1>{{rifa.rifaDescripcion}}</h1>
+@defer {
+    <h1>{{rifa.rifaDescripcion}}</h1>
 
-<h3>Fecha: {{rifa.fechaSorteo | date: 'longDate'}}</h3>
-<h3>Hora: {{rifa.horaSorteo}}</h3>
+    <h3>Fecha: {{rifa.fechaSorteo | date: 'longDate'}}</h3>
+    <h3>Hora: {{rifa.horaSorteo}}</h3>
 
-<ul>
-@for (premio of premios; track premio.premioId) {
-    <li>Premio N° {{$index + 1}}: {{premio.premioDescripcion}}</li>
+    <ul>
+    @for (premio of premios; track premio.premioId) {
+        <li>Premio N° {{$index + 1}}: {{premio.premioDescripcion}}</li>
+    }
+    </ul>
+    <span>Precio: S/</span>
+    {{precio.precioUnitario}}
+
+    <br>
+
+    <span>{{rifa.sponsor}}</span>
 }
-</ul>
-<span>Precio: S/</span>
-{{precio.precioUnitario}}
+@loading {
+    <div class="skeleton skeleton-text"><h1> </h1></div>
 
-<br>
+    <div class="skeleton skeleton-text"><h3> </h3></div>
+    <div class="skeleton skeleton-text"><h3> </h3></div>
 
-<span>{{rifa.sponsor}}</span>
+    <ul>
+        <li class="skeleton skeleton-text"></li>
+        <li class="skeleton skeleton-text"></li>
+        <li class="skeleton skeleton-text"></li>
+    </ul>
+    <div class="skeleton skeleton-text"><span> </span></div>
+    <div class="skeleton skeleton-text"><span> </span></div>
+}
+
