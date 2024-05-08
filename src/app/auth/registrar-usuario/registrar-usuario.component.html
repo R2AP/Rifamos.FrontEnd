@@ -6,35 +6,68 @@
         </mat-card-header>
         <br><br>
         <mat-card-content>
-            <form class="example-form">
-                <mat-form-field class="example-full-width">
-                  <mat-label>Usuario</mat-label>
-                  <input type="email" matInput placeholder="usuario@rifamos.com">
-                </mat-form-field>
+            <form class="form" [formGroup]="sesionForm">
+              <mat-form-field class="full-width">
+                <mat-label>Correo electrónico</mat-label>
+                <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
+                @if (usuario.hasError('email') && !usuario.hasError('required')) {
+                  <mat-error>Por favor ingresa un correo válido</mat-error>
+                }
+                @if (usuario.hasError('required')) {
+                  <mat-error>El correo es <strong>requerido</strong></mat-error>
+                }
+              </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <mat-label>Nombres</mat-label>
-                    <input matInput placeholder="Nombres">
-                  </mat-form-field>
-              
-                <mat-form-field class="example-full-width">
-                  <mat-label>Contraseña</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'" placeholder="Mínimo 8 digitos" />
-                  <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                  </button>
-                </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Nombres</mat-label>
+                <input matInput id ="nombres" formControlName = "nombres" placeholder="Nombres">
+              </mat-form-field>
 
-                <mat-form-field class="example-full-width">
-                    <mat-label>Confirmar contraseña</mat-label>
-                    <input type="password" matInput placeholder="Mínimo 8 digitos" />
-                  </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Apellido Paterno</mat-label>
+                <input matInput id ="apellidoPaterno" formControlName = "apellidoPaterno" placeholder="Apellido Paterno">
+              </mat-form-field>
 
-              </form>              
+              <mat-form-field class="full-width">
+                <mat-label>Apellido Materno</mat-label>
+                <input matInput id ="apellidoMaterno" formControlName = "apellidoMaterno" placeholder="Apellido Materno">
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Tipo Documento</mat-label>
+                <input matInput id ="tipoDocumento" formControlName = "tipoDocumento" placeholder="Tipo Documento">
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Número Documento</mat-label>
+                <input matInput id ="numeroDocumento" formControlName = "numeroDocumento" placeholder="Número Documento">
+              </mat-form-field>
+            
+              <mat-form-field class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" id ="contrasena" formControlName = "contrasena" placeholder="Mínimo 8 digitos" />
+                <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                @if (contrasena.hasError('required')) {
+                  <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+                }
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <mat-label>Confirmar contraseña</mat-label>
+                <input type="password" matInput id ="contrasenaConfirmacion" formControlName = "contrasenaConfirmacion" placeholder="Mínimo 8 digitos" />
+                @if (contrasenaConfirmacion.hasError('required')) {
+                  <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+                }
+              </mat-form-field>
+            
+              <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Crear</button>
+            </form>              
         </mat-card-content>
         
-        <mat-card-actions>
-            <button mat-flat-button class="botones" color="accent">Crear</button>
-        </mat-card-actions>
+        <!-- <mat-card-actions>
+            
+        </mat-card-actions> -->
     </mat-card>
 </div>

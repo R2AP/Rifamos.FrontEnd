@@ -6,6 +6,10 @@ html, body { height: 100%;
     margin: 0;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.principal-container {
+    height: 100%;
+}
+
 .skeleton {
     opacity: .7;
     animation: skeleton-loading 1s linear infinite alternate;

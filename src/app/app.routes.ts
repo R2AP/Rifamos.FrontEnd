@@ -9,7 +9,7 @@ export const routes: Routes = [
         loadChildren: () => import('./rifa/rifa.route').then(m => m.RIFA_ROUTES)
     },
     {
-        path: 'iniciar-sesion',
+        path: 'sesion',
         component: LoginLayoutComponent,
         loadChildren: () => import('./auth/auth.route').then(m => m.AUTH_ROUTES)
     },

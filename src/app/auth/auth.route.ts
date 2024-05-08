@@ -3,6 +3,6 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 
 export const AUTH_ROUTES: Routes = [
-    { path: '', component: IniciarSesionComponent },
+    { path: 'iniciar', component: IniciarSesionComponent },
     { path: 'registrate', component: RegistrarUsuarioComponent}
 ];

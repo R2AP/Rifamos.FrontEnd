@@ -1,33 +1,41 @@
  <div class="main-container">
-    <mat-card class="tarjeta">
-        <mat-card-header>
-            <mat-card-title>RifamosTodo.online</mat-card-title>
-            <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
-        </mat-card-header>
-        <br><br>
-        <mat-card-content>
-            <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
-                <mat-form-field class="full-width">
-                  <mat-label>Usuario</mat-label>
-                  <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
-                </mat-form-field>
-              
-                <mat-form-field class="full-width">
-                  <mat-label>Contraseña</mat-label>
-                  <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
-                  
-                </mat-form-field>
+      <mat-card class="tarjeta">
+          <mat-card-header>
+              <mat-card-title>RifamosTodo.online</mat-card-title>
+              <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
+          </mat-card-header>
+          <br><br>
+          <mat-card-content>
+              <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
+                  <mat-form-field class="full-width">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
+                    @if (usuario.hasError('email') && !usuario.hasError('required')) {
+                      <mat-error>Por favor ingresa un correo válido</mat-error>
+                    }
+                    @if (usuario.hasError('required')) {
+                      <mat-error>El correo es <strong>requerido</strong></mat-error>
+                    }
+                  </mat-form-field>
+                
+                  <mat-form-field class="full-width">
+                    <mat-label>Contraseña</mat-label>
+                    <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
+                    @if (contrasena.hasError('required')) {
+                      <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+                    }
+                  </mat-form-field>
 
-                <p>
-                  <a href="#">Olvidé mi contraseña</a>
-                </p>
-                <button mat-flat-button class="botones" color="accent" type="submit">Continuar</button>
-            </form>              
-        </mat-card-content>
-        
-        <mat-card-actions class="acciones">
-            o
-            <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
-        </mat-card-actions>
-    </mat-card>
+                  <p>
+                    <a href="#">Olvidé mi contraseña</a>
+                  </p>
+                  <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Continuar</button>
+              </form>              
+          </mat-card-content>
+          
+          <mat-card-actions class="acciones">
+              o
+              <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
+          </mat-card-actions>
+      </mat-card>
 </div>
