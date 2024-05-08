@@ -17,16 +17,18 @@ export class NavBarComponent implements OnInit{
   private readonly sesionSvc = inject(SesionService);
   private router = inject(Router);
   sesionIniciada:Boolean = false;
+  correoElectronico:string = '';
 
   ngOnInit(): void {
     this.obtenerSesionIniciada();
   }
   obtenerSesionIniciada(){
     this.sesionIniciada = this.sesionSvc.sesionIniciada();
+    this.correoElectronico = sessionStorage.getItem('email') || '';
   }
 
   cerrarSesion(){
     this.sesionSvc.cerrarSesion();
-    this.router.navigateByUrl('/iniciar-sesion');
+    this.router.navigateByUrl('/sesion/iniciar');
   }
 }

@@ -1,0 +1,28 @@
+<div class="main-container">
+    <mat-card class="tarjeta">
+        <mat-card-header>
+            <mat-card-title>RifamosTodo.online</mat-card-title>
+            <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
+                <mat-form-field class="full-width">
+                  <mat-label>Correo electrónico</mat-label>
+                  <input type="email" matInput id ="correoElectronico" formControlName = "correoElectronico" placeholder="usuario@rifamos.com">
+                  @if (correoElectronico.hasError('email') && !correoElectronico.hasError('required')) {
+                    <mat-error>Por favor ingresa un correo válido</mat-error>
+                  }
+                  @if (correoElectronico.hasError('required')) {
+                    <mat-error>El correo es <strong>requerido</strong></mat-error>
+                  }
+                </mat-form-field>
+              
+                <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Continuar</button>
+            </form>              
+        </mat-card-content>
+        
+        <mat-card-actions class="acciones">
+           
+        </mat-card-actions>
+    </mat-card>
+</div>

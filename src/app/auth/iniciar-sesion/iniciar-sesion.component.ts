@@ -41,8 +41,17 @@ export class IniciarSesionComponent {
   }
 
   onSubmit(){
-    const usuario:Usuario = new Usuario(this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
-                                  this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '', "00.00.00.00");
+    const usuario:Usuario = new Usuario(
+                                  '', //nombres
+                                  '', //apellidoPaterno
+                                  '', //apellidoPaterno
+                                  this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
+                                  this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '',
+                                  1, //tipoDocumento
+                                  '', //numeroDocumento
+                                  '', //telefono
+                                  "00.00.00.00",
+                                  ''); //auditoriaUsuario
 
       this.sesionSvc.iniciarSesion(usuario).subscribe({
         next:(res: any) => {

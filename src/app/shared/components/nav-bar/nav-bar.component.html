@@ -10,13 +10,11 @@
         <mat-icon>account_circle</mat-icon>usuario
       </button> -->
 
-      <button mat-fab extended [matMenuTriggerFor]="menu" color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-display" aria-label="Botón para indicar la seisión del usuario">
         <mat-icon>account_circle</mat-icon>
-        Usuario
       </button>
-      
       <mat-menu #menu="matMenu" >
-      <!-- <button mat-menu-item>usuario</button> -->
+      <button mat-menu-item>{{correoElectronico}}</button>
       <button mat-menu-item (click)="cerrarSesion()">Cerrar sesión</button>
     </mat-menu>
     }
