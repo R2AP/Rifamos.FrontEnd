@@ -56,10 +56,13 @@
 
               <mat-form-field class="full-width">
                 <mat-label>Confirmar contraseña</mat-label>
-                <input type="password" matInput id ="contrasenaConfirmacion" formControlName = "contrasenaConfirmacion" placeholder="Mínimo 8 digitos" />
+                <input type="password" matInput id ="contrasenaConfirmacion" formControlName = "contrasenaConfirmacion" [errorStateMatcher]="confirmErrorMatcher" placeholder="Mínimo 8 digitos" />
                 @if (contrasenaConfirmacion.hasError('required')) {
-                  <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+                  <mat-error>La confirmacón de la contraseña es <strong>requerida</strong></mat-error>
                 }
+                @if (!contrasenaConfirmacion.hasError('required')) {<!--&& !contrasenaConfirmacion.hasError('required') && sesionForm.touched-->
+                  <mat-error>La contraseña y su confirmación no coinciden</mat-error>
+                }                
               </mat-form-field>
             
               <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Crear</button>

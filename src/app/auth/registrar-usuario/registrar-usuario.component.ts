@@ -6,14 +6,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
 import { Usuario } from '../../core/models/usuario.model';
-import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsuarioService } from '../../core/services/usuario.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registrar-usuario',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule,MatIconModule, ReactiveFormsModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule,MatIconModule, ReactiveFormsModule, CommonModule],
   templateUrl: './registrar-usuario.component.html',
   styleUrl: './registrar-usuario.component.css'
 })
@@ -35,7 +36,10 @@ export class RegistrarUsuarioComponent {
     contrasenaConfirmacion: ['', Validators.required],
     tipoDocumento: [''],
     numeroDocumento: ['']
-  })
+  },
+  {
+    validators: this.passwordMatchValidator,
+  });
 
   get nombres() {
     return this.sesionForm.get('nombres') as FormControl;
@@ -68,6 +72,27 @@ export class RegistrarUsuarioComponent {
   get numeroDocumento() {
     return this.sesionForm.get('numeroDocumento') as FormControl;
   }
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.sesionForm.controls;
+  }
+
+  confirmErrorMatcher = {
+    isErrorState: (control: FormControl, form: FormGroupDirective): boolean => {
+      const controlInvalid = control.touched && control.invalid;
+      const formInvalid = control.touched && this.contrasena.touched && this.sesionForm.hasError('mismatch');
+      return controlInvalid || formInvalid;
+    }
+  }
+
+passwordMatchValidator(control: AbstractControl) {
+  return control.get('contrasena')?.value ===
+        control.get('contrasenaConfirmacion')?.value
+        ? null
+        : { mismatch: true};
+}
+
+  
   
   onSubmit(){
     const usuario:Usuario = new Usuario(
