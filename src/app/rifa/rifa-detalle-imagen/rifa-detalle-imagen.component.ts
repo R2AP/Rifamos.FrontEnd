@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { RifaService } from '../../core/services/rifa.service';
 import { CommonModule } from '@angular/common';
-import { Base64 } from 'js-base64';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -34,7 +33,6 @@ export class RifaDetalleImagenComponent implements OnInit {
       next:(res: any) => {
         this.rifa = res;
         console.log ( res );
-        // this.ImageDataUrl64 = "data:image/png;base64," + Base64.extendString()
         this.base64Image = 'data:image/png;base64, ' + res.imagen;
         this.transform()
       },
