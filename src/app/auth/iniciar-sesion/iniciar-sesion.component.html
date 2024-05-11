@@ -4,10 +4,11 @@
               <mat-card-title>RifamosTodo.online</mat-card-title>
               <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
           </mat-card-header>
-          <br><br>
+          
           <mat-card-content>
               <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
-                  <mat-form-field class="full-width">
+                <p style="color: red; font-style: italic; font-size: small;">{{errorFormulario}}</p>
+                  <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Correo electrónico</mat-label>
                     <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
                     @if (usuario.hasError('email') && !usuario.hasError('required')) {
@@ -18,14 +19,16 @@
                     }
                   </mat-form-field>
                 
-                  <mat-form-field class="full-width">
+                  <mat-form-field class="full-width" appearance="outline">
                     <mat-label>Contraseña</mat-label>
                     <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
                     @if (contrasena.hasError('required')) {
                       <mat-error>La contraseña es <strong>requerida</strong></mat-error>
                     }
+                    @if (contrasena.hasError('minlength')) {
+                      <mat-error>La contraseña debe tener <strong>mínimo 8 caracteres</strong></mat-error>
+                    }
                   </mat-form-field>
-
                   <p>
                     <a href="./sesion/recuperar-contrasena">Olvidé mi contraseña</a>
                   </p>

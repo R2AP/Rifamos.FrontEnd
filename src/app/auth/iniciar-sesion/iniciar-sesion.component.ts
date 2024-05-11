@@ -10,11 +10,12 @@ import { Usuario } from '../../core/models/usuario.model';
 import { CookieService } from 'ngx-cookie-service'
 import { Router } from '@angular/router';
 import * as forge from 'node-forge';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-iniciar-sesion',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule],
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css'
 })
@@ -22,6 +23,7 @@ export class IniciarSesionComponent {
   private readonly sesionSvc = inject(SesionService);
   private readonly cookieSvc = inject(CookieService);
   private readonly router = inject(Router);
+  errorFormulario:string = "";
 
   constructor (
     private formBuilder : FormBuilder
@@ -29,7 +31,7 @@ export class IniciarSesionComponent {
 
   sesionForm = this.formBuilder.group({
     usuario: ['', [Validators.required, Validators.email]],
-    contrasena: ['', Validators.required]
+    contrasena: ['', [Validators.required, Validators.minLength(8)]]
   })
 
   get usuario() {
@@ -64,7 +66,10 @@ export class IniciarSesionComponent {
           }
   
         },
-        error:(error) => console.log('Error consultando la rifa', error)
+        error:(error) => {
+          this.errorFormulario = error.error.mensaje;
+          console.log('Error consultando la rifa', error)
+        }
       })
   }
 

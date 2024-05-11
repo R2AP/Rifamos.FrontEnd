@@ -22,6 +22,8 @@ export class RegistrarUsuarioComponent {
   private readonly usuarioSvc = inject(UsuarioService);
   private readonly router = inject(Router);
 
+  errorFormulario:string = "";
+  
   hide = true;
   constructor (
     private formBuilder : FormBuilder
@@ -32,7 +34,7 @@ export class RegistrarUsuarioComponent {
     apellidoPaterno: [''],
     apellidoMaterno: [''],
     usuario: ['', [Validators.required, Validators.email]],
-    contrasena: ['', Validators.required],
+    contrasena: ['', [Validators.required, Validators.minLength(8)]],
     contrasenaConfirmacion: ['', Validators.required],
     tipoDocumento: [''],
     numeroDocumento: ['']
@@ -113,7 +115,7 @@ passwordMatchValidator(control: AbstractControl) {
           this.router.navigate(['/sesion/iniciar']);
         },
         error:(error) => {
-          alert('No se pudo registrar el usuario');
+          this.errorFormulario = error.error.mensaje;
           console.log('Error consultando la rifa', error)
         }
       })

@@ -7,6 +7,7 @@
         <br><br>
         <mat-card-content>
             <form class="form" [formGroup]="sesionForm" (ngSubmit)="onSubmit()">
+              <p style="color: red; font-style: italic; font-size: small;">{{errorFormulario}}</p>
               <mat-form-field class="full-width">
                 <mat-label>Correo electrónico</mat-label>
                 <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
@@ -51,6 +52,9 @@
                 </button>
                 @if (contrasena.hasError('required')) {
                   <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+                }
+                @if (contrasena.hasError('minlength')) {
+                  <mat-error>La contraseña debe tener <strong>mínimo 8 caracteres</strong></mat-error>
                 }
               </mat-form-field>
 

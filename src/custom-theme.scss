@@ -16,7 +16,7 @@ $RifamosFrontEnd-primary: mat.define-palette(mat.$light-blue-palette, 800, A100,
 $RifamosFrontEnd-accent: mat.define-palette(mat.$lime-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$RifamosFrontEnd-warn: mat.define-palette(mat.$orange-palette);
+$RifamosFrontEnd-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
