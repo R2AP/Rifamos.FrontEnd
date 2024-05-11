@@ -1,44 +1,57 @@
- <div class="main-container">
-      <mat-card class="tarjeta">
-          <mat-card-header>
-              <mat-card-title>RifamosTodo.online</mat-card-title>
-              <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
-          </mat-card-header>
+ <!-- <div class="main-container">
+  <div class="imagen-container">@defer {
+    <img src="../../../assets/FrontPage.png" class="imagen">
+  }
+  @loading {
+      <img class="skeleton">
+  }</div>
+
+  <div class="tarjeta-container">@defer { -->
+    <mat-card class="tarjeta">
+      <mat-card-header>
+          <mat-card-title>RifamosTodo.online</mat-card-title>
+          <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
+      </mat-card-header>
+        
+      <mat-card-content>
+        <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
+          <p style="color: red; font-style: italic; font-size: small;">{{errorFormulario}}</p>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Correo electrónico</mat-label>
+              <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
+              @if (usuario.hasError('email') && !usuario.hasError('required')) {
+                <mat-error>Por favor ingresa un correo válido</mat-error>
+              }
+              @if (usuario.hasError('required')) {
+                <mat-error>El correo es <strong>requerido</strong></mat-error>
+              }
+            </mat-form-field>
           
-          <mat-card-content>
-              <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
-                <p style="color: red; font-style: italic; font-size: small;">{{errorFormulario}}</p>
-                  <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Correo electrónico</mat-label>
-                    <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
-                    @if (usuario.hasError('email') && !usuario.hasError('required')) {
-                      <mat-error>Por favor ingresa un correo válido</mat-error>
-                    }
-                    @if (usuario.hasError('required')) {
-                      <mat-error>El correo es <strong>requerido</strong></mat-error>
-                    }
-                  </mat-form-field>
-                
-                  <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Contraseña</mat-label>
-                    <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
-                    @if (contrasena.hasError('required')) {
-                      <mat-error>La contraseña es <strong>requerida</strong></mat-error>
-                    }
-                    @if (contrasena.hasError('minlength')) {
-                      <mat-error>La contraseña debe tener <strong>mínimo 8 caracteres</strong></mat-error>
-                    }
-                  </mat-form-field>
-                  <p>
-                    <a href="./sesion/recuperar-contrasena">Olvidé mi contraseña</a>
-                  </p>
-                  <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Continuar</button>
-              </form>              
-          </mat-card-content>
-          
-          <mat-card-actions class="acciones">
-              o
-              <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
-          </mat-card-actions>
-      </mat-card>
-</div>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
+              @if (contrasena.hasError('required')) {
+                <mat-error>La contraseña es <strong>requerida</strong></mat-error>
+              }
+              @if (contrasena.hasError('minlength')) {
+                <mat-error>La contraseña debe tener <strong>mínimo 8 caracteres</strong></mat-error>
+              }
+            </mat-form-field>
+            <p>
+              <a href="./sesion/recuperar-contrasena">Olvidé mi contraseña</a>
+            </p>
+            <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Continuar</button>
+        </form>              
+      </mat-card-content>
+      
+      <mat-card-actions class="acciones">
+          o
+          <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
+      </mat-card-actions>
+    </mat-card>
+  <!-- }
+  @loading {
+      <img class="skeleton">
+  }</div>
+
+</div> -->

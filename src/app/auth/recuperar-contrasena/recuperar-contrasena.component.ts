@@ -15,6 +15,7 @@ import { UsuarioService } from '../../core/services/usuario.service';
 })
 export class RecuperarContrasenaComponent {
   private readonly usuarioSvc = inject(UsuarioService);
+  errorFormulario:string = "";
 
   constructor (
     private formBuilder : FormBuilder
@@ -40,7 +41,10 @@ export class RecuperarContrasenaComponent {
         next:(res: any) => {
           alert("Se ha enviado el correo");
         },
-        error:(error) => console.log('Error consultando la rifa', error)
+        error:(error) => {
+          this.errorFormulario = error.error.mensaje;
+          console.log('Error consultando la rifa', error)
+        }
       })
   }
 }
