@@ -28,6 +28,9 @@
 .acciones{
   display: flex;
   flex-direction: column;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .imagen-container{
@@ -46,6 +49,16 @@
   align-items: center;
   height: 100%;
   width: 50%;
+}
+
+a {
+  
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+.derecha {
+  text-align: right;
 }
 
 @media screen and (max-width: 700px){

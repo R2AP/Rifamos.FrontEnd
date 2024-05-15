@@ -19,6 +19,7 @@
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Correo electrónico</mat-label>
               <input type="email" matInput id ="usuario" formControlName = "usuario" placeholder="usuario@rifamos.com">
+              <mat-icon matSuffix>alternate_email</mat-icon>
               @if (usuario.hasError('email') && !usuario.hasError('required')) {
                 <mat-error>Por favor ingresa un correo válido</mat-error>
               }
@@ -30,6 +31,7 @@
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Contraseña</mat-label>
               <input type="password" id ="contrasena" formControlName = "contrasena" matInput placeholder="Mínimo 8 digitos" />
+              <mat-icon matSuffix>lock</mat-icon>
               @if (contrasena.hasError('required')) {
                 <mat-error>La contraseña es <strong>requerida</strong></mat-error>
               }
@@ -37,17 +39,22 @@
                 <mat-error>La contraseña debe tener <strong>mínimo 8 caracteres</strong></mat-error>
               }
             </mat-form-field>
-            <p>
+            
+            <br />
+            <div class="derecha">
               <a href="./sesion/recuperar-contrasena">Olvidé mi contraseña</a>
-            </p>
+            </div>
+            <br />
+
             <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Continuar</button>
+            <br />
+            <br />
+            <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
         </form>              
       </mat-card-content>
       
-      <mat-card-actions class="acciones">
-          o
-          <a mat-stroked-button class="botones" color="primary" href="./sesion/registrate">Regístrate</a>
-      </mat-card-actions>
+      <!-- <mat-card-actions>
+      </mat-card-actions> -->
     </mat-card>
   <!-- }
   @loading {

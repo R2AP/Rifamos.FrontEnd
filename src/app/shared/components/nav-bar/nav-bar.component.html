@@ -19,10 +19,12 @@
     </mat-menu>
     }
     @else {
-      <button mat-icon-button [disabled]="true" class="icon-display" aria-label="Botón para indicar la seisión del usuario">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-display" aria-label="Botón para indicar la seisión del usuario">
         <mat-icon>account_circle</mat-icon>
       </button>
-
+      <mat-menu #menu="matMenu" >
+        <button mat-menu-item (click)="cerrarSesion()">Iniciar sesión</button>
+      </mat-menu>
     }
     
 

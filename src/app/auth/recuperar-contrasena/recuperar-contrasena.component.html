@@ -1,29 +1,36 @@
 <div class="main-container">
+  @if (correoEnviado) {
+    <p>Se ha enviado el correo satisfactoriamente, ingrese a su correo para verificar</p>
+  } @else {
     <mat-card class="tarjeta">
-        <mat-card-header>
-            <mat-card-title>RifamosTodo.online</mat-card-title>
-            <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
-              <p style="color: red; font-style: italic; font-size: small;">{{errorFormulario}}</p>
-                <mat-form-field class="full-width">
-                  <mat-label>Correo electrónico</mat-label>
-                  <input type="email" matInput id ="correoElectronico" formControlName = "correoElectronico" placeholder="usuario@rifamos.com">
-                  @if (correoElectronico.hasError('email') && !correoElectronico.hasError('required')) {
-                    <mat-error>Por favor ingresa un correo válido</mat-error>
-                  }
-                  @if (correoElectronico.hasError('required')) {
-                    <mat-error>El correo es <strong>requerido</strong></mat-error>
-                  }
-                </mat-form-field>
-              
-                <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Continuar</button>
-            </form>              
-        </mat-card-content>
-        
-        <mat-card-actions class="acciones">
-           
-        </mat-card-actions>
+      <mat-card-header>
+        <mat-card-title>RifamosTodo.online</mat-card-title>
+        <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Ingrese su correo electrónico y pulse el botón <strong>Enviar</strong> para enviarle una nueva contraseña:</p>
+          <form class="formulario" [formGroup]="sesionForm" (ngSubmit) = "onSubmit()">
+            <p style="color: red; font-style: italic; font-size: small;">{{errorFormulario}}</p>
+              <mat-form-field class="full-width">
+                <mat-label>Correo electrónico</mat-label>
+                <input type="email" matInput id ="correoElectronico" formControlName = "correoElectronico" placeholder="usuario@rifamos.com">
+                <mat-icon matSuffix>lock</mat-icon>
+                @if (correoElectronico.hasError('email') && !correoElectronico.hasError('required')) {
+                  <mat-error>Por favor ingresa un correo válido</mat-error>
+                }
+                @if (correoElectronico.hasError('required')) {
+                  <mat-error>El correo es <strong>requerido</strong></mat-error>
+                }
+              </mat-form-field>
+            
+              <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Enviar</button>
+          </form>              
+      </mat-card-content>
+      
+      <mat-card-actions class="acciones">
+          
+      </mat-card-actions>
     </mat-card>
+  }
+  
 </div>

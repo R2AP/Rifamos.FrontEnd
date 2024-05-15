@@ -11,11 +11,12 @@ import { CookieService } from 'ngx-cookie-service'
 import { Router } from '@angular/router';
 import * as forge from 'node-forge';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-iniciar-sesion',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule, MatIconModule],
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css'
 })

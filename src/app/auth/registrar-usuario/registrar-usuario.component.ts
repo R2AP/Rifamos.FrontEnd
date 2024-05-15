@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
 export class RegistrarUsuarioComponent {
   private readonly usuarioSvc = inject(UsuarioService);
   private readonly router = inject(Router);
+  usuarioCreado:boolean = false;
 
   errorFormulario:string = "";
   
@@ -111,8 +112,11 @@ passwordMatchValidator(control: AbstractControl) {
 
       this.usuarioSvc.registrarUsuario(usuario).subscribe({
         next:(res: any) => {
-          alert("Usuario registrado con éxito");
-          this.router.navigate(['/sesion/iniciar']);
+          this.usuarioCreado = true;
+
+          setTimeout( () => {
+            this.router.navigate(['/sesion/iniciar']);
+         }, 4000); 
         },
         error:(error) => {
           this.errorFormulario = error.error.mensaje;

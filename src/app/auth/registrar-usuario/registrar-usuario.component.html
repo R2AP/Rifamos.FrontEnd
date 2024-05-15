@@ -1,4 +1,7 @@
 <div class="main-container">
+  @if (usuarioCreado) {
+    <p>Se ha creado el usuario satisfactoriamente.  Redirigiéndose al login...</p>
+  } @else {
     <mat-card class="example-card">
         <mat-card-header>
             <mat-card-title>RifamosTodo.online</mat-card-title>
@@ -77,4 +80,5 @@
             
         </mat-card-actions> -->
     </mat-card>
+  }
 </div>
