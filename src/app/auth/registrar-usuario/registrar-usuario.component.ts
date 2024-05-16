@@ -8,13 +8,13 @@ import {MatDividerModule} from '@angular/material/divider';
 import { Usuario } from '../../core/models/usuario.model';
 import { AbstractControl, FormBuilder, FormControl, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UsuarioService } from '../../core/services/usuario.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registrar-usuario',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule,MatIconModule, ReactiveFormsModule, CommonModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule,MatIconModule, ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './registrar-usuario.component.html',
   styleUrl: './registrar-usuario.component.css'
 })
@@ -26,6 +26,7 @@ export class RegistrarUsuarioComponent {
   errorFormulario:string = "";
   
   hide = true;
+  hideConfirm = true;
   constructor (
     private formBuilder : FormBuilder
   ){}
@@ -95,17 +96,15 @@ passwordMatchValidator(control: AbstractControl) {
         : { mismatch: true};
 }
 
-  
-  
   onSubmit(){
     const usuario:Usuario = new Usuario(
-                                        '', //nombres
-                                        '', //apellidoPaterno
-                                        '', //apellidoPaterno
+                                        this.nombres.value, //nombres
+                                        this.apellidoPaterno.value, //apellidoPaterno
+                                        this.apellidoPaterno.value, //apellidoPaterno
                                         this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
                                         this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '',
-                                        1, //tipoDocumento
-                                        '', //numeroDocumento
+                                        this.tipoDocumento.value, //tipoDocumento
+                                        this.numeroDocumento.value, //numeroDocumento
                                         '', //telefono
                                         "00.00.00.00",
                                         ''); //auditoriaUsuario

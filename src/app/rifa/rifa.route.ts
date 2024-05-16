@@ -8,5 +8,5 @@ import { userGuard } from '../core/guards/user.guard';
 export const RIFA_ROUTES: Routes = [
     { path: 'rifa/:rifaId', component: RifaDetalleComponent },
     { path: 'pago', component: PasarelaPagoComponent, canActivate: [userGuard]},
-    { path: 'compra-realizada', component: CompraRealizadaComponent, canActivate: [userGuard]}
+    { path: 'compra-realizada', component: CompraRealizadaComponent, canActivate: [userGuard]},
 ];

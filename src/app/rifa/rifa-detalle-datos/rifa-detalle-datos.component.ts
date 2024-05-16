@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { RifaService } from '../../core/services/rifa.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rifa-detalle-datos',
@@ -11,7 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class RifaDetalleDatosComponent implements OnInit {
   @Input() rifaIdInput: number = 0;
-  private readonly rifaSvc = inject(RifaService)
+  private readonly rifaSvc = inject(RifaService);
+  private readonly router = inject(Router);
+
   rifa: any = [];
   premios = new Array<any>();
   // precios = new Array<any>();
@@ -37,7 +40,12 @@ export class RifaDetalleDatosComponent implements OnInit {
         //console.log ( res );
 
       },
-      error:(error) => console.log('Error consultando la rifa', error)
+      error:(error) => {
+        if (error.status === 404) {
+          this.router.navigate(['/404']);
+        }
+        console.log('Error consultando la rifa', error)
+      }
     })
   }
 

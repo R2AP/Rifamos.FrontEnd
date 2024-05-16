@@ -1,3 +1,9 @@
+<p>
+  <a mat-button routerLink="/sesion/iniciar">
+    <mat-icon>chevron_left</mat-icon> Regresar
+  </a>
+</p>
+
 <div class="main-container">
   @if (usuarioCreado) {
     <p>Se ha creado el usuario satisfactoriamente.  Redirigiéndose al login...</p>
@@ -50,7 +56,7 @@
               <mat-form-field class="full-width">
                 <mat-label>Contraseña</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" id ="contrasena" formControlName = "contrasena" placeholder="Mínimo 8 digitos" />
-                <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 @if (contrasena.hasError('required')) {
@@ -63,7 +69,10 @@
 
               <mat-form-field class="full-width">
                 <mat-label>Confirmar contraseña</mat-label>
-                <input type="password" matInput id ="contrasenaConfirmacion" formControlName = "contrasenaConfirmacion" [errorStateMatcher]="confirmErrorMatcher" placeholder="Mínimo 8 digitos" />
+                <input matInput [type]="hideConfirm ? 'password' : 'text'" id ="contrasenaConfirmacion" formControlName = "contrasenaConfirmacion" [errorStateMatcher]="confirmErrorMatcher" placeholder="Mínimo 8 digitos" />
+                <button mat-icon-button type="button" matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Ocultar contraseña'" [attr.aria-pressed]="hideConfirm">
+                  <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
                 @if (contrasenaConfirmacion.hasError('required')) {
                   <mat-error>La confirmacón de la contraseña es <strong>requerida</strong></mat-error>
                 }

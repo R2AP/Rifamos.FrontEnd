@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -9,7 +9,7 @@ import { SesionService } from '../../../core/services/sesion.service';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [MatIconModule, MatToolbarModule, MatButtonModule, MatMenuModule],
+  imports: [MatIconModule, MatToolbarModule, MatButtonModule, MatMenuModule, RouterLink],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
@@ -29,6 +29,6 @@ export class NavBarComponent implements OnInit{
 
   cerrarSesion(){
     this.sesionSvc.cerrarSesion();
-    this.router.navigateByUrl('/sesion/iniciar');
+    this.router.navigate(['/sesion/iniciar']);
   }
 }

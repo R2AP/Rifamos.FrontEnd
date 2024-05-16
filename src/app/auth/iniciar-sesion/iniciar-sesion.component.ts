@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { SesionService } from '../../core/services/sesion.service';
 import { Usuario } from '../../core/models/usuario.model';
 import { CookieService } from 'ngx-cookie-service'
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import * as forge from 'node-forge';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,7 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-iniciar-sesion',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule, MatIconModule],
+  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule, MatIconModule, RouterLink],
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css'
 })

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeLayoutComponent } from './shared/components/layout/home-layout/home-layout.component';
 import { LoginLayoutComponent } from './shared/components/layout/login-layout/login-layout.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 export const routes: Routes = [
     {
@@ -15,6 +16,7 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        loadComponent: () => import('./shared/components/not-found/not-found.component').then(m => m.NotFoundComponent)
+        component: NotFoundComponent
+        //loadComponent: () => import('./shared/components/not-found/not-found.component').then(m => m.NotFoundComponent)
     }
 ];

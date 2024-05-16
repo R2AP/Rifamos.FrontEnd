@@ -6,13 +6,13 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   template:  `
-     <div class="main-container">
-  <div class="imagen-container">@defer {
-    <img src="../../../assets/FrontPage.png" class="imagen">
-  }
-  @loading {
-      <img class="skeleton">
-  }</div>
+    <div class="main-container">
+      <div class="imagen-container">@defer {
+        <img src="../../../assets/FrontPage.png" class="imagen">
+      }
+      @loading {
+          <img class="skeleton">
+      }</div>
 
   <div class="tarjeta-container">@defer {
       <router-outlet />
