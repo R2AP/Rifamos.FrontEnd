@@ -100,7 +100,7 @@ passwordMatchValidator(control: AbstractControl) {
     const usuario:Usuario = new Usuario(
                                         this.nombres.value, //nombres
                                         this.apellidoPaterno.value, //apellidoPaterno
-                                        this.apellidoPaterno.value, //apellidoPaterno
+                                        this.apellidoMaterno.value, //apellidoPaterno
                                         this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
                                         this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '',
                                         this.tipoDocumento.value, //tipoDocumento

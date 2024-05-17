@@ -5,16 +5,12 @@ import { SpinnerService } from "../../../core/services/spinner.service";
     selector: 'app-spinner',
     standalone: true,
     imports: [],
-    template: ` 
-        <h1>spinner</h1>
-        <div class="overlay">
-            <div class="flex justify-center items-center min-h-screen">
-                <div
-                class="animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-orange-500"
-                ></div>
-            </div>
+    template: `
+        <div class="spinner-container"> 
+            <div class="lds-dual-ring"></div>
         </div>
     `,
+    styleUrl: './spinner.component.css'
 })
 export default class SpinnerComponent {
     private readonly spinnerSvc = inject(SpinnerService);
