@@ -6,6 +6,7 @@
     position: fixed;
     z-index: 500;
     background-color: #fff;
+    opacity: 0.5;
     left: 0;
     right: 0;
     top: 0;

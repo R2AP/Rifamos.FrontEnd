@@ -6,9 +6,11 @@ import { SpinnerService } from "../../../core/services/spinner.service";
     standalone: true,
     imports: [],
     template: `
+    @if (isLoading()) {
         <div class="spinner-container"> 
             <div class="lds-dual-ring"></div>
         </div>
+    }
     `,
     styleUrl: './spinner.component.css'
 })
