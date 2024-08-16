@@ -1,3 +1,8 @@
+.fondo-imagen{
+  background-color: black;
+  background-image: url(../../../../assets/FondoHeader.png);
+}
+
 .spacer {
     flex: 1 1 auto;
   }
@@ -5,3 +10,49 @@
 .icon-display {
     transform: scale(1.5);
  }
+
+ .logo {
+  width: 152px;
+  height: 65px;
+  margin-left: 63px;
+ }
+
+ .dimensiones{
+  padding: 0 0 0 0;
+  height: 100px;
+ }
+
+ .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 548px;
+  height: 65px;
+  margin-left: 272px;
+  grid-gap: 21px;
+ }
+
+ .menu a {
+  text-decoration: none;
+  font-size: 18px;
+ }
+
+ .menu a:link, :visited, :hover, :active{
+  color: #fff;
+  }
+
+.botonera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botonera a {
+  
+  font-size: 18px;
+  
+ }
+
+ .botonera a:link, :visited, :hover, :active{
+  color: #fff;
+  }
