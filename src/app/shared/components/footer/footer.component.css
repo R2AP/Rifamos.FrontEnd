@@ -4,39 +4,30 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-    font-size: 15px;
-    color: #fff;
-    line-height: 1em; 
+    font-size: 16px;
+    color: #fff; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+    line-height: 1.2;
   }
 
-  .Flex {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    list-style: none;
-    margin: 50px 50px 50px 50px;
-    padding: 0;
+  .item {
+    margin-top: 63px;
+    margin-bottom: 140px;
+    padding-left: 35px;
+  }
+
+  .item + .item {
+    border-left: solid 2px #242424;
 }
 
-.Flex-item {
-    flex: 1 1 auto;
-    position: relative;
-    text-align: center;
-    line-height: 40px;
+.item a{
+    text-decoration: none;
 }
 
-.Flex-item + .Flex-item {
-    border-left: solid 1px white;
-}
-
-/** Optional for OPs exact layout */
-
-.Flex-item:first-child {
-    text-align: left;
-}
-
-.Flex-item:last-child {
-    text-align: right;
+.item a:link, :visited, :hover, :active{
+    color: #fff;
 }
 
 .footer-banner {
@@ -55,3 +46,8 @@
     width: 183px;
     height: 78px;
    }
+
+.reclamaciones {
+    display: flex;
+    flex-direction: row;
+}
