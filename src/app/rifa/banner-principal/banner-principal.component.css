@@ -1,0 +1,79 @@
+.contenedor-principal {
+    max-width: 1443.35px;
+    background-image: url(../../../assets/FondoBanner.png);
+    width: auto;
+    min-height: 641px;
+    padding: 70px 20px 20px 66px;
+}
+
+.datos-rifa {
+    max-width: 528px;
+    max-height: 496.09px;
+}
+
+#titulo-rifa {
+    color: white;
+    /*-webkit-text-fill-color: white;*/
+    -webkit-text-stroke: 3px black;
+    font-weight: 900;
+    font-size: 83px;
+    line-height: 0.8em;
+}
+
+#detalle-rifa {
+    color: white;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 1.1em;
+    margin-bottom: 25px;
+}
+
+#premios {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 20px 12px 20px;
+}
+
+#fecha {
+    color: #15181F;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+#tabla-premios {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+#tabla-premios div {
+    padding-left: 14px;
+}
+
+.titulo-tabla-premios {
+    color: #15181F;
+    font-weight: 700;
+    font-size: 18.9px;
+
+}
+
+.titulo-tabla-premios + .titulo-tabla-premios {
+    border-left: solid 2px #00A909;
+}
+
+.fila-tabla-premios {
+    color: #15181F;
+    font-weight: 300;
+    font-size: 15.5px;
+    font-style: italic;
+}
+
+.fila-tabla-premios + .fila-tabla-premios {
+    border-left: solid 2px #00A909;
+}
+
+.vl {
+    border-left: 2.5px dashed #15181F;
+    height: 10px;
+  }
