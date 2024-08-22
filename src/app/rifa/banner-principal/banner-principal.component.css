@@ -2,8 +2,12 @@
     max-width: 1443.35px;
     background-image: url(../../../assets/FondoBanner.png);
     width: auto;
-    min-height: 641px;
+    /* min-height: 641px; */
     padding: 70px 20px 20px 66px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 640px;
 }
 
 .datos-rifa {
@@ -76,4 +80,54 @@
 .vl {
     border-left: 2.5px dashed #15181F;
     height: 10px;
+  }
+
+  .boton-participar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+  }
+
+  .boton-participar mat-icon {
+    width: auto;
+    height: auto;
+  }
+
+  .imagenes{
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .imagenes div{
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    /* border: solid 1px black; */
+    border-radius: 9.64px;
+  }
+
+  .imagenes ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    gap: 10px;
+  }
+
+  .imagenes ul li{
+    flex: 1;
+    height: 100%;
+    border: solid 1px black;
+    border-radius: 9.64px;
   }
