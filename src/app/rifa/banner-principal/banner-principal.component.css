@@ -3,7 +3,7 @@
     background-image: url(../../../assets/FondoBanner.png);
     width: auto;
     /* min-height: 641px; */
-    padding: 70px 20px 20px 66px;
+    padding: 52px 20px 20px 66px;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
@@ -13,6 +13,7 @@
 .datos-rifa {
     max-width: 528px;
     max-height: 496.09px;
+    margin-top: 30px;
 }
 
 #titulo-rifa {

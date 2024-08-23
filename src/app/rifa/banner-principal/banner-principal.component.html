@@ -1,19 +1,20 @@
 <div class="contenedor-principal">
     <div class="datos-rifa">
         <div>
-            <div id="titulo-rifa"><i>RIFA<br />GAMER</i></div>
+            <!-- <div id="titulo-rifa"><i>RIFA<br />GAMER</i></div> -->
+            <div id="titulo-rifa"><i>{{rifa[0].rifaDescripcion}}</i></div>
             <div id="detalle-rifa"><i>Participa en nuestros sorteos y llévate a casa los premios más codiciados del mundo Gamer.</i></div>
         </div>
         <div id="premios">
-            <div id="fecha">Sorteo: 26 de Julio 2024</div>
+            <div id="fecha">Sorteo: {{rifa[0].fechaSorteo | date: 'longDate'}}</div>
             <div id="tabla-premios">
                 <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 1</div>
                 <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 2</div>
                 <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 3</div>
 
-                <div class="fila-tabla-premios">Play Station 5</div>
-                <div class="fila-tabla-premios">Nintendo Switch</div>
-                <div class="fila-tabla-premios">Xbox Series S</div>
+                <div class="fila-tabla-premios">{{rifa[0].listPremio[0].premioDescripcion}}</div>
+                <div class="fila-tabla-premios">{{rifa[0].listPremio[1].premioDescripcion}}</div>
+                <div class="fila-tabla-premios">{{rifa[0].listPremio[2].premioDescripcion}}</div>
             </div>
         </div>
         <br />

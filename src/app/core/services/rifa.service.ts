@@ -22,4 +22,8 @@ export class RifaService {
   obtenerPrecios(rifaId : number): Observable<any> {
     return this._http.get(apiURL + '/precio/listar-precio/' + rifaId);
   }
+
+  obtenerListaRifaEstado(estado:number): Observable<any> {
+    return this._http.get(apiURL + '/rifa/obtener-lista-rifa-estado/' + estado);
+  }
 }
