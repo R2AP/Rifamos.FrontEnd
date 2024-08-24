@@ -1,6 +1,6 @@
 .contenedor-principal {
     max-width: 1443.35px;
-    background-image: url(../../../assets/FondoBanner.png);
+    /*background-image: url(../../../assets/FondoBanner.png);*/
     width: auto;
     /* min-height: 641px; */
     padding: 52px 20px 20px 66px;
@@ -8,6 +8,14 @@
     flex-direction: row;
     box-sizing: border-box;
     height: 640px;
+}
+
+.contenedor-main {
+  max-width: 1443.35px;
+  background-image: url(../../../assets/FondoBanner.png);
+  width: auto;
+  /* min-height: 641px; */
+  height: 640px;
 }
 
 .datos-rifa {
