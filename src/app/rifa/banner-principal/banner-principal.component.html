@@ -10,10 +10,11 @@
                 <div id="premios">
                     <div id="fecha">Sorteo: {{rifa.fechaSorteo | date: 'longDate'}}</div>
                     <div id="tabla-premios">
+                        <div class="titulo-tabla-premios" *ngFor="let item of rifa.listPremio; let i = index"><span style="color: #00A909;">🍀</span> Premio {{i + 1}}</div>
 
-                        <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 1</div>
+                        <!-- <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 1</div>
                         <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 2</div>
-                        <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 3</div>      
+                        <div class="titulo-tabla-premios"><span style="color: #00A909;">🍀</span> Premio 3</div>       -->
 
                         <div class="fila-tabla-premios" *ngFor="let premio of rifa.listPremio">{{premio.premioDescripcion}}</div>
                     </div>
@@ -39,11 +40,7 @@
                 </div>
             </div>
             <div class="imagenes">
-                <div style="background-color: white;" *ngFor="let premio of rifa.listPremio"><img [src]="transform(premio.imagen)"></div>
-                <!-- <div style="background-color: white;"><img [src]="transform(rifa.imagen)"></div>
-                <div style="background-color: #1F1E25"></div>
-                <div style="background-color: #FFD815;"></div> -->
-                
+                <div style="background-color: transparent; border:none;" *ngFor="let premio of rifa.listPremio"><img [src]="transform(premio.imagen)" style="height: 100%; width: 100%;"></div>
             </div>
         </div>
     </swiper-slide>

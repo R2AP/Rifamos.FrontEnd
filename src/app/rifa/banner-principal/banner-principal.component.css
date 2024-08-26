@@ -19,7 +19,7 @@
 }
 
 .datos-rifa {
-    max-width: 528px;
+    min-width: 528px;
     max-height: 496.09px;
     margin-top: 30px;
 }
