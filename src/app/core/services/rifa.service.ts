@@ -23,7 +23,7 @@ export class RifaService {
     return this._http.get(apiURL + '/precio/listar-precio/' + rifaId);
   }
 
-  obtenerListaRifaEstado(estado:number): Observable<any> {
-    return this._http.get(apiURL + '/rifa/obtener-lista-rifa-estado/' + estado);
+  obtenerListaRifaEstado(estado:number, premium:string): Observable<any> {
+    return this._http.get(apiURL + '/rifa/obtener-lista-rifa-estado/' + estado + '/' + premium);
   }
 }

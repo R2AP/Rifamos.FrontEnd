@@ -31,7 +31,7 @@ export class BannerPrincipalComponent implements OnInit{
 
   obtenerDatosRifa()
   {
-    this.rifaSvc.obtenerListaRifaEstado(2).subscribe({
+    this.rifaSvc.obtenerListaRifaEstado(2, 'S').subscribe({
       next:(res: any) => {
         
         this.rifas = res;
