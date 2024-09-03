@@ -1,0 +1,114 @@
+#contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    max-width: 415px;
+    gap: 15px;
+}
+
+#imagen-rifa {
+    max-width: 392px;
+    max-height: 380px;
+}
+
+#imagen {
+    border: white solid 10px;
+    border-radius: 15px;
+    object-fit: cover;
+    width:100%;
+  height:100%;
+  box-sizing: border-box;
+}
+
+#datos-rifa {
+    max-width: 396px;
+    min-height: 105px;
+}
+
+#premios {
+    background-image: url(../../../assets/TicketNegro.svg);
+    background-size: auto auto;
+
+    display: inline-block; /* the default for span */
+    width: 277px;
+    height: 104px;
+    padding: 12.9px 4px 10px 10px;
+    box-sizing: border-box;
+}
+
+#precio {
+    display: inline-block; /* the default for span */
+    width: 119px;
+    height: 106px;
+    left: -4px;
+    position: relative;
+    background-image: url(../../../assets/TicketBlanco.svg);
+    background-size: cover;
+    z-index: -1;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.titulo-rifa {
+    font-weight: bold;
+    color: #4CFF00;
+    font-size: 17.49px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.premio {
+    font-size: 12px;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#boton-fecha {
+    min-height: 65px;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 5px;
+}
+
+#boton-compra {
+    flex-grow: 4;
+    height: auto;
+    width: auto;
+    background-color: yellow;
+}
+
+#fecha {
+    flex-grow: 1;
+    height: auto;
+    width: auto;
+}
+
+.imagen-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    height: 23.4px;
+    width: 54.6px;
+    display: block;
+}
+
+.monto {
+    font-size: 21.33px;
+    font-weight: bold;
+    vertical-align: center;
+}
+
+.boton-comprar {
+    /* font-weight: 400; */
+    font-size: 12.54px;
+    letter-spacing: 0.03em;
+    height: 24.04px;
+    background-color: #4DFF00;
+}
