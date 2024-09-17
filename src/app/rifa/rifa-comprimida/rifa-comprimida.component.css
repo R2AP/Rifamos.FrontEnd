@@ -79,7 +79,6 @@
     flex-grow: 4;
     height: auto;
     width: auto;
-    background-color: yellow;
 }
 
 #fecha {
@@ -112,3 +111,10 @@
     height: 24.04px;
     background-color: #4DFF00;
 }
+
+.boton-participar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
