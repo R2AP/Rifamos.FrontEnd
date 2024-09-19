@@ -1,17 +1,28 @@
 #contenedor-principal {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     max-width: 415px;
     gap: 15px;
+
+    border-radius: 12.85px;
+    border: 1.98px solid;
+    border-color: #242936;
 }
 
 #imagen-rifa {
-    max-width: 392px;
-    max-height: 380px;
+    position: relative;
+    width: 392px;
+    height: 380px;
+
+    top: 10px;
+    left: 10px;
+
+    margin: 0px 0px 10px 0px;
 }
 
 #imagen {
-    border: white solid 10px;
+    /* border: white solid 10px; */
     border-radius: 15px;
     object-fit: cover;
     width:100%;
@@ -20,6 +31,8 @@
 }
 
 #datos-rifa {
+    position: relative;
+    left: 10px;
     max-width: 396px;
     min-height: 105px;
 }
@@ -68,23 +81,28 @@
 }
 
 #boton-fecha {
+    position: relative;
+    left: 10px;
     min-height: 65px;
     display: flex;
     flex-direction: row;
-    width: auto;
+    max-width: 396px;
     gap: 5px;
 }
 
 #boton-compra {
-    flex-grow: 4;
+    flex-grow: 1;
     height: auto;
     width: auto;
 }
 
 #fecha {
-    flex-grow: 1;
-    height: auto;
-    width: auto;
+    /* flex-grow: 1; */
+    height: 61px;
+    width: 61px;
+    border-radius: 44.51px;
+    border: 1.07px solid;
+    box-shadow: 0px 4.28px 0px #000000;
 }
 
 .imagen-logo {
@@ -117,4 +135,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+
+    border-radius: var(--mdc-extended-fab-container-shape);
+    border: 1.07px solid;
+    box-shadow: 0px 4.28px 0px #000000;    
   }

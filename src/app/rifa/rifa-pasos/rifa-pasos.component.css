@@ -68,6 +68,11 @@
     line-height: 138px;
 }
 
+.tamano-numero {
+    font-size: 80px;
+    font-weight: 900;
+}
+
 .fondo-azul{
     background-color: #1f5edb;
 }
