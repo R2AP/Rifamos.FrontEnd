@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -10,5 +10,5 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './rifa-comprimida.component.css'
 })
 export class RifaComprimidaComponent {
-
+  @Input() rifaIdInput: number = 0;
 }

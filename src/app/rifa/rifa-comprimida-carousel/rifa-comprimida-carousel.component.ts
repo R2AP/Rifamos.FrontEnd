@@ -29,25 +29,26 @@ export class RifaComprimidaCarouselComponent implements OnInit{
 
   swiperProperties()
   {
-    const swiperEl = document.querySelector('swiper-container')
+    const swiperEl = document.querySelector('#suiper')
     const swiperOptions: SwiperOptions = {
       slidesPerView: 1,
       spaceBetween: 10,
+      navigation: true,
       pagination: {
         clickable: true,
       },
       breakpoints: {
         640: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 4,
-          spaceBetween: 40,
+          slidesPerView: 2,
+          spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 5,
-          spaceBetween: 50,
+          slidesPerView: 3,
+          spaceBetween: 40,
         },
       },
     };
@@ -56,7 +57,7 @@ export class RifaComprimidaCarouselComponent implements OnInit{
 
   obtenerDatosRifa()
   {
-    this.rifaSvc.obtenerListaRifaEstado(2, 'S').subscribe({
+    this.rifaSvc.obtenerListaRifaEstado(2, 'N').subscribe({
       next:(res: any) => {
         
         this.rifas = res;
