@@ -1,0 +1,65 @@
+.fondo-negro {
+    background-color: black;
+    background-image: url(../../../assets/fondo-banner-proximo-premio.png);
+    padding: 63px 10px 40px 51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.fondo-amarillo {
+    background-color: #FFFF00;
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    font-size: 17.8px;
+    font-weight: bold;
+    border-radius: 52.85px;
+    align-items: center;
+    padding: 5px 10px 5px 31px;
+    gap: 30px;
+}
+
+.letras-principal {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    flex: 4;
+    line-height: 31px;
+}
+
+.circulo {
+    background: black;
+    color: white;
+    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 0;
+    align-items: center;
+}
+
+.circulos {
+    display: flex;
+    flex-direction: row;
+    gap: 20.33px;
+}
+
+.fecha {
+    padding: 10.55px 6.28px 7.57px 6.28px;
+}
+
+.numero {
+    font-size: 23.86px;
+    font-weight: bold;
+    line-height: 25px;
+    text-align: center;
+}
+
+.letras {
+    font-size: 15.32px;
+    font-weight:normal;
+    line-height: 25px;
+}

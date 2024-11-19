@@ -1,0 +1,51 @@
+<!-- <button id="avanzar">Slide Next</button> -->
+
+
+<!-- <div class="swiper-button-prev">asd</div> -->
+<swiper-container id="suiperFechas" slidesPerView="3" spaceBetween="10" class="mySwiper">
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">05</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">19</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">26</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">05</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">19</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">26</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">05</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">19</div>
+    </div></swiper-slide>
+    <swiper-slide><div class="dia">
+        <div class="nombre-dia">Vie.</div>
+        <div class="numero-dia">26</div>
+    </div></swiper-slide>
+  </swiper-container>
+
+  <script>
+    const swiperElq = document.querySelector('#suiperFechas');
+    const buttonElq = document.querySelector('#avanzar');
+  console.log(swiperElq);
+    buttonElq.addEventListener('click', () => {
+      swiperElq.swiper.slideNext();
+    });
+    </script>

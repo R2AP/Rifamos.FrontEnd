@@ -1,0 +1,14 @@
+#titulo {
+    /* -webkit-text-stroke: 3px black; */
+    font-weight: 800;
+    font-size: 36px;
+    /* line-height: 1.2em; */
+}
+
+#subtitulo {
+    /* font-weight: 700; */
+    font-size: 22px;
+    /* line-height: 1.1em;
+    margin-bottom: 25px;
+    max-width: 528px; */
+}

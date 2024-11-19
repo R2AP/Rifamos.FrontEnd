@@ -1,0 +1,14 @@
+.dia {
+    width: 91px;
+    height: 86px;
+    text-align: center;
+}
+
+.nombre-dia {
+    font-size: 25px;
+}
+
+.numero-dia {
+    font-size: 37px;
+    font-weight: bold;
+}
