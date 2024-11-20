@@ -1,11 +1,11 @@
 .fondo-negro {
-    background-color: black;
+    background-color: #15181F;
     background-image: url(../../../assets/fondo-banner-proximo-premio.png);
-    padding: 63px 10px 40px 51px;
+    padding: 51px 63px 40px 63px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 50px;
+    gap: 85px;
 }
 
 .fondo-amarillo {

@@ -1,0 +1,37 @@
+.principal {
+    display: flex;
+    flex-direction: row;
+    padding: 64px 0 50px 64px;
+    gap: 300px;
+}
+
+.mensaje {
+    flex: 1;
+    margin-top: 50px;
+}
+
+.carrusel {
+    flex: 1;
+}
+
+.titulo {
+    font-size: 36px;
+    font-weight:800;
+}
+
+.titulo-resaltado {
+    color: #0A9B2E;
+}
+
+.descripcion {
+    padding: 50px 0 50px 0;
+    font-size: 30.76px;
+    font-weight: 300;
+}
+
+.boton-ver-premios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+  }
