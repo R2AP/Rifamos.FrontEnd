@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-rifa-comprimida',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, CommonModule],
+  imports: [/*MatButtonModule, MatIconModule,*/ CommonModule],
   templateUrl: './rifa-comprimida.component.html',
   styleUrl: './rifa-comprimida.component.css'
 })

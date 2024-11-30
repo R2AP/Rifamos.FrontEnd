@@ -1,22 +1,16 @@
 import { Component, inject } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDividerModule} from '@angular/material/divider';
-import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+//import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SesionService } from '../../core/services/sesion.service';
 import { Usuario } from '../../core/models/usuario.model';
 import { CookieService } from 'ngx-cookie-service'
 import { Router, RouterLink } from '@angular/router';
 import * as forge from 'node-forge';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-iniciar-sesion',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule, MatIconModule, RouterLink],
+  imports: [/*MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, ReactiveFormsModule, CommonModule, MatIconModule, RouterLink*/],
   templateUrl: './iniciar-sesion.component.html',
   styleUrl: './iniciar-sesion.component.css'
 })
@@ -26,30 +20,30 @@ export class IniciarSesionComponent {
   private readonly router = inject(Router);
   errorFormulario:string = "";
 
-  constructor (
-    private formBuilder : FormBuilder
-  ){}
+  // constructor (
+  //   private formBuilder : FormBuilder
+  // ){}
 
-  sesionForm = this.formBuilder.group({
-    usuario: ['', [Validators.required, Validators.email]],
-    contrasena: ['', [Validators.required, Validators.minLength(8)]]
-  })
+  // sesionForm = this.formBuilder.group({
+  //   usuario: ['', [Validators.required, Validators.email]],
+  //   contrasena: ['', [Validators.required, Validators.minLength(8)]]
+  // })
 
-  get usuario() {
-    return this.sesionForm.get('usuario') as FormControl;
-  }
+  // get usuario() {
+  //   return this.sesionForm.get('usuario') as FormControl;
+  // }
 
-  get contrasena() {
-    return this.sesionForm.get('contrasena') as FormControl;
-  }
+  // get contrasena() {
+  //   return this.sesionForm.get('contrasena') as FormControl;
+  // }
 
   onSubmit(){
     const usuario:Usuario = new Usuario(
                                   '', //nombres
                                   '', //apellidoPaterno
                                   '', //apellidoPaterno
-                                  this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
-                                  this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '',
+                                  '',//this.sesionForm.value.usuario ? this.sesionForm.value.usuario: '',
+                                  '', //this.sesionForm.value.contrasena ? this.sesionForm.value.contrasena: '',
                                   1, //tipoDocumento
                                   '', //numeroDocumento
                                   '', //telefono

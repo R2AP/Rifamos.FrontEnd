@@ -1,6 +1,6 @@
 <p>
   <a mat-button routerLink="/sesion/iniciar">
-    <mat-icon>chevron_left</mat-icon> Regresar
+    <!-- <mat-icon>chevron_left</mat-icon> Regresar -->
   </a>
 </p>
 
@@ -8,7 +8,7 @@
   @if (usuarioCreado) {
     <p>Se ha creado el usuario satisfactoriamente.  Redirigiéndose al login...</p>
   } @else {
-    <mat-card class="example-card">
+    <!-- <mat-card class="example-card">
         <mat-card-header>
             <mat-card-title>RifamosTodo.online</mat-card-title>
             <mat-card-subtitle>Ganar, ganar y ganar ;)</mat-card-subtitle>
@@ -76,7 +76,7 @@
                 @if (contrasenaConfirmacion.hasError('required')) {
                   <mat-error>La confirmacón de la contraseña es <strong>requerida</strong></mat-error>
                 }
-                @if (!contrasenaConfirmacion.hasError('required')) {<!--&& !contrasenaConfirmacion.hasError('required') && sesionForm.touched-->
+                @if (!contrasenaConfirmacion.hasError('required')) {
                   <mat-error>La contraseña y su confirmación no coinciden</mat-error>
                 }                
               </mat-form-field>
@@ -84,10 +84,6 @@
               <button mat-flat-button class="botones" color="accent" type="submit" [disabled]="sesionForm.invalid">Crear</button>
             </form>              
         </mat-card-content>
-        
-        <!-- <mat-card-actions>
-            
-        </mat-card-actions> -->
-    </mat-card>
+    </mat-card> -->
   }
 </div>

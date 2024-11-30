@@ -1,0 +1,28 @@
+.contenedor-principal {
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+}
+
+#foto {
+    width: 665px;
+    background-image: url(../../../assets/contactanos.png);
+}
+
+#contenedor-formulario {
+    flex: 5;
+    max-height: 100%;
+    background-image: url(../../../assets/fondo-contactanos.png);
+    padding: 56.11px 132px 20px 164.3px;
+}
+
+#titulo {
+    color: white;
+    text-align: center;
+    font-size: 38.5px;
+    font-weight: 800;
+}
+
+.centrado {
+    text-align: center;
+}

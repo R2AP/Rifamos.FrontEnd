@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+// import { MatButtonModule } from '@angular/material/button';
+// import { MatIconModule } from '@angular/material/icon';
 import { RifaService } from '../../core/services/rifa.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ register();
 @Component({
   selector: 'app-banner-principal',
   standalone: true,
-  imports: [MatButtonModule,MatIconModule, CommonModule],
+  imports: [/*MatButtonModule,MatIconModule,*/ CommonModule],
   templateUrl: './banner-principal.component.html',
   styleUrl: './banner-principal.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
