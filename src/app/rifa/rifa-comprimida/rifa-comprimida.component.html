@@ -5,13 +5,13 @@
     <div id="datos-rifa">
         <div id="premios">
             <div class="titulo-rifa">{{rifa.rifaDescripcion}}</div>
-            <div class="premio" *ngFor="let premio of rifa.listPremio; let i = index">🍀 <strong>Premio {{i + 1}}:</strong> premio.premioDescripcion</div>
+            <div class="premio" *ngFor="let premio of rifa.listPremio; let i = index">🍀 <strong>Premio {{i + 1}}:</strong> {{premio.premioDescripcion}}</div>
             <!-- <div class="premio">🍀 <strong>Premio 2:</strong> Ducati Panigate V4 R moto n2</div>
             <div class="premio">🍀 <strong>Premio 3:</strong> MOto BAJAJ PULSAR 125LS moto n3</div> -->
         </div>
         <div id="precio">
             <div class="imagen-logo"><img src="../../../../assets/LogoRifamosTodo.png" class="logo"></div>
-            <div class="monto">S/3.00</div>
+            <div class="monto">S/{{rifa.listPrecio[0].precioUnitario | number:'1.2-2'}}</div>
             <button mat-fab extended class="boton-comprar">
                 <strong>COMPRAR</strong>
                 <!-- <mat-icon iconPositionEnd>
