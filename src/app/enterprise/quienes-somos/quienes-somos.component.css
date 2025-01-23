@@ -1,0 +1,57 @@
+#fondo-quienes-somos {
+    background-image: url(../../../assets/fondo-quienes-somos.svg);
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 100%;
+    width: 100%; 
+    background-size:cover;
+    background-repeat: repeat;
+    /* color: white; */
+    font-size: 62px;
+    font-weight: bold;
+}
+
+#titulo-quienes-somos {
+    width: 100%;
+    text-align: left;
+    padding-top: 35px;
+    line-height: 0.9em;
+    height: auto; /*150px;*/
+}
+
+.titulo1 {
+    font-size: 59px;
+    color: white;
+    margin-left: 100px;
+}
+
+#parrafo {
+    width: 100%;
+    text-align: justify;
+    padding-top: 35px;
+    /* line-height: 0.9em;  */
+    height: auto; /*150px;*/
+}
+
+.parrafo {
+    color: white;
+    font-weight: 350;
+    font-size: 33px;
+    line-height: 1.5em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+    max-width: 1000px;
+}
+
+#pasos {
+    height: 422px;
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+}
+
+.paso {
+    position: relative;
+    width: 50%;
+}
