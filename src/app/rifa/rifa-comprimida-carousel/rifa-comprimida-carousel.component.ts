@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { register } from 'swiper/element/bundle';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RifaComprimidaComponent } from '../rifa-comprimida/rifa-comprimida.component';
+import Swiper from 'swiper';
 import { SwiperOptions } from 'swiper/types';
 register();
 @Component({
@@ -19,19 +20,28 @@ export class RifaComprimidaCarouselComponent implements OnInit{
   private readonly rifaSvc = inject(RifaService);
   private readonly router = inject(Router);
   rifas: any = [];
+  swiperEl = document.querySelector('.mySwiper')
 
   constructor(private sanitizer:DomSanitizer){
   }
   ngOnInit(): void {
     this.obtenerDatosRifa();
-    this.swiperProperties();
+    //this.swiperProperties();
   }
 
   swiperProperties()
-  {
-    const swiperEl = document.querySelector('#suiper')
+  {  
+    const swiper = new Swiper('.swiper', {
+      //modules: [Navigation],
+      speed: 500,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
     const swiperOptions: SwiperOptions = {
-      slidesPerView: 1,
+      slidesPerView: 3,
       spaceBetween: 10,
       navigation: true,
       pagination: {
@@ -52,17 +62,14 @@ export class RifaComprimidaCarouselComponent implements OnInit{
         },
       },
     };
-    Object.assign(swiperEl!, swiperOptions);
+    Object.assign(swiper, swiperOptions);
   }
 
   obtenerDatosRifa()
   {
     this.rifaSvc.obtenerListaRifaEstado(2, 'N').subscribe({
       next:(res: any) => {
-        
         this.rifas = res;
-        console.log ( res );
-
       },
       error:(error) => {
         if (error.status === 404) {
@@ -71,5 +78,11 @@ export class RifaComprimidaCarouselComponent implements OnInit{
         console.log('Error consultando la rifa', error)
       }
     })
+  }
+
+  botonPrevio(){
+    //this.swiperEl.slidePrev();
+    
+    
   }
 }

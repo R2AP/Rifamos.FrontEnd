@@ -1,4 +1,7 @@
-<swiper-container id="suiper" slidesPerView="3" spaceBetween="10" class="mySwiper">
+<!-- <button (click)="botonPrevio()">prueba de previo</button> -->
+<div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+<swiper-container id="suiper" slides-per-view="3" space-between="10" class="mySwiper">
     <swiper-slide *ngFor="let rifa of rifas">
         <app-rifa-comprimida [rifa] ="rifa"></app-rifa-comprimida>
     </swiper-slide>
